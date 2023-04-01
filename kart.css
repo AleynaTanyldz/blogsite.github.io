@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Patrick Hand', cursive;
+    background-color: #694142;
+}
+.infobox{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.box{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #000;
+    box-shadow: 0 30px 30px rgba(0,0,0,.5);
+}
+.box .picturebox{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.box .picturebox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.box:hover .picturebox img{
+    opacity: 0;
+}
+.box .contentbox{
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 80%;
+    height: 60px;
+    background: #fff;
+    transition: 0.5s;
+    overflow: hidden;
+
+    padding: 15px;
+    box-sizing: border-box;
+}
+.box:hover .contentbox{
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+.box .contentbox h3{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: 'Playball', cursive;
+}
+.box .contentbox p{
+    margin: 10px 0 0;
+    padding: 0;
+    opacity: 0;
+    line-height: 1.2em;
+    transition: 0.5s;
+    font-size: 20px;
+}
+.box:hover .contentbox p{
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+nav ul{
+    flex: 1;
+    text-align: right;
+    padding-right: 30px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+nav ul li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(26, 21, 21);
+    transition: width 0.3s;
+}
+nav ul li a:hover::after{
+    width: 50%;
+}
